@@ -9,6 +9,7 @@ $(document).ready(function(){
   var tied = "Tied";
   var userWinning = "You";
   var cpWinning = "CP";
+ 
 
   $("#startStop").on("click", function() {
     if ($(this).attr("data-status") === "on") {
