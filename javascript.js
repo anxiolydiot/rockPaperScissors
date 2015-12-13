@@ -9,7 +9,7 @@ $(document).ready(function(){
   var tied = "Tied";
   var userWinning = "You";
   var cpWinning = "CP";
- 
+
 
   $("#startStop").on("click", function() {
     if ($(this).attr("data-status") === "on") {
@@ -25,11 +25,10 @@ $(document).ready(function(){
         .addClass("btn-danger")
         .removeClass("btn-success")
         .attr("data-status", "on")
-        .html("Start Game");
-      $(".choice").unbind();
-      $("h1").empty();
+        .html("Start Game")
+      $(".choice").unbind()
       $(".scoreStatus").empty();
-      $(".allClear").empty();
+      
       userScore = cpScore  = roundCount = userRoundsWon = cpRoundsWon = tiedRounds = 0;
     }
   })
@@ -40,6 +39,14 @@ function controls(){
   var randomNum = Math.floor(Math.random() * choiceOptions.length);
   var userChoice = this.id;
   var cpChoice = choiceOptions[randomNum];
+
+    $("#userScore").html(userScore).prepend("<p> You: </p>");
+    $("#cpScore").html(cpScore).prepend("<p> CP: </p>");
+    $("#round").html(roundCount).prepend("<p> Round: </p>");
+    $("#userChoice").html(userChoice).prepend("<p> You Chose: </p>");
+    $("#cpChoice").html(cpChoice).prepend("<p> CP Chose: </p>");
+    $('#scoreInput input').val(userScore);
+    
 
       console.log(userChoice);
       console.log(cpChoice);
@@ -101,11 +108,7 @@ function controls(){
     
     console.log(roundCount);
     console.log(cpScore);
-    $("#userScore").html(userScore).prepend("<p> You: </p>");
-    $("#cpScore").html(cpScore).prepend("<p> CP: </p>");
-    $("#round").html(roundCount).prepend("<p> Round: </p>");
-    $("#userChoice").html(userChoice).prepend("<p> You Chose: </p>");
-    $("#cpChoice").html(cpChoice).prepend("<p> CP Chose: </p>");
+
     
 
     })
