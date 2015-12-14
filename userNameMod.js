@@ -15,7 +15,7 @@ $(document).ready(function(){
     e.preventDefault();
 
     var userName =$("#userNameForm").val();
-    $("#userName").html(userName);   
+    $("#userName").html(userName).prepend("<p> Player: </p>");   
  
   });
 });

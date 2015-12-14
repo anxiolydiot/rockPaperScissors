@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 "use strict";
 if(window.addEventListener) {
     window.addEventListener('load', function () {
@@ -76,10 +75,7 @@ if(window.addEventListener) {
                     {
                         alert("That character is already defined.");
                     }
-                    else if( charEntered.length!=1 )
-                    {
-                        alert("Please enter exactly one character.");
-                    }
+                  
                     else
                     {
                         drawingArea.clear();
@@ -171,7 +167,7 @@ if(window.addEventListener) {
 
                 }
 
-                alert('I believe you typed: ' + bestChar );
+                $("#guessUserChoice").html(bestChar).prepend("<p> I think you chose: </p>");
             }
 
             drawingArea.clear();
@@ -187,16 +183,7 @@ if(window.addEventListener) {
         // Preload the digits, so that the user can quickly do some OCR if desired.
         function preload()
         {
-            defineChar("0", new Array( -1,1,1,1,-1,1,1,-1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,-1 ) );
-            defineChar("1", new Array( 1,1,1,-1,-1,1,1,1,-1,-1,1,1,1,-1,-1,1,1,1,1,-1,-1,1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,1,1,1,1) );
-            defineChar("2", new Array(1,1,1,-1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,1,1,1,1,-1,1,-1,1,1,-1,1,1,1,1,1) );
-            defineChar("3", new Array(1,1,1,1,-1,-1,-1,-1,1,1,-1,-1,-1,1,1,-1,-1,1,1,-1,-1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,1,1,1,1,1) );
-            defineChar("4", new Array(1,-1,-1,1,-1,1,-1,-1,1,-1,1,-1,-1,1,-1,1,1,1,1,1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1) );
-            defineChar("5", new Array(1,1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,1,1,1,1,1) );
-            defineChar("6", new Array(-1,1,1,1,-1,1,1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,1,1,-1,1,1,1,1,1,1,1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,1) );
-            defineChar("7", new Array(1,1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,1,1,-1,-1,-1,1,-1,-1,-1,1,1,-1,-1,-1,1,-1,-1,-1) );
-            defineChar("8", new Array(1,1,1,1,1,1,-1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1,-1,1,1,1,1,1,1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1) );
-            defineChar("9", new Array(1,1,1,1,1,1,1,-1,-1,1,1,-1,-1,-1,1,1,1,1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,1) );
+            
         }
 
         // Define a character, add it to the list and to the map.

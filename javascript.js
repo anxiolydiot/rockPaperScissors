@@ -39,13 +39,15 @@ function controls(){
   var randomNum = Math.floor(Math.random() * choiceOptions.length);
   var userChoice = this.id;
   var cpChoice = choiceOptions[randomNum];
+ 
+
 
     $("#userScore").html(userScore).prepend("<p> You: </p>");
     $("#cpScore").html(cpScore).prepend("<p> CP: </p>");
     $("#round").html(roundCount).prepend("<p> Round: </p>");
     $("#userChoice").html(userChoice).prepend("<p> You Chose: </p>");
     $("#cpChoice").html(cpChoice).prepend("<p> CP Chose: </p>");
-    $('#scoreInput input').val(userScore);
+    
     
 
       console.log(userChoice);
@@ -66,10 +68,10 @@ function controls(){
      if (userChoice === "paper" &&  cpChoice === "scissor"){
       cpScore++;
     }
-     if (userChoice === "scissors" &&  cpChoice === "rock"){
+     if (userChoice === "scissor" &&  cpChoice === "rock"){
       cpScore++;
     }
-     if (userChoice === "scissors" &&  cpChoice === "paper"){
+     if (userChoice === "scissor" &&  cpChoice === "paper"){
       userScore++;
     }
     /*if (userScore == cpScore ){

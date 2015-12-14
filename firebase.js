@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var LEADERBOARD_SIZE = 7;
+    var LEADERBOARD_SIZE = 20;
 
   // Build some firebase references.
   var rootRef = new Firebase('https://whydoespapermakerocksad.firebaseio.com/');
@@ -60,7 +60,7 @@ $(document).ready(function() {
   $("#scoreInput").keypress(function (e) {
     if (e.keyCode == 13) {
       var newScore = Number($("#scoreInput").val());
-      var name = $("#nameInput").val();
+      var name = $("#userNameForm").val();
       $("#scoreInput").val("");
 
       if (name.length === 0)
